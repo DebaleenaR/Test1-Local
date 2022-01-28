@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/animal-sniffer-annotations-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/byte-buddy-1.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/checker-compat-qual-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cobertura-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-core-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-gherkin-5.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-html-0.2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-java-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-junit-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-jvm-deps-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/cucumber-picocontainer-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/error_prone_annotations-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/guava-23.6-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/j2objc-annotations-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/junit-4.13.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/mockito-core-3.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/okhttp-3.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/okio-1.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-api-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-chrome-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-edge-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-firefox-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-ie-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-java-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-opera-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-remote-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-safari-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Selenium Projects/All jars/All jars/selenium-support-3.12.0.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

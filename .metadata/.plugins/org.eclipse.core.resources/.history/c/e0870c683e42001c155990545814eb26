@@ -1,0 +1,549 @@
+package com.testautomation.PageObjects;
+import java.util.Map;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.testautomation.Utility.ExcelHandler;
+import com.testautomation.Utility.PropertiesFileReader;
+import com.testautomation.Utility.TestDataHandler;
+
+public class SafetyNotification {
+
+
+	WebDriver driver;
+	Properties properties;
+	PropertiesFileReader obj = new PropertiesFileReader();
+	TestDataHandler testData = new TestDataHandler();
+	
+	public SafetyNotification(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"SafetyId\"]/span")
+	public WebElement SafetyNotificationMenu;
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"UploadSafetyNotificationsId\"]")
+	public WebElement NavigateUploadSN;
+	
+	@FindBy(how=How.XPATH, using="/html/body/div[3]/div[2]/div/div[3]/div/form/div[1]/div[1]/div[1]/div/div/div[2]/div/table/tbody/tr/td[2]/input")
+	public WebElement safetyNotification;
+	
+	@FindBy(how=How.XPATH, using="//td[contains(text(),\"Other Safety Notification\")]")
+	public WebElement OtherSNType;
+	//td[contains(text(),"Other Safety Notification")]
+	
+//	@FindBy(how=How.XPATH, using="(//table[starts-with(@id,\"safetyNotificationWidgets_forms_controls_Select\")])[2]")
+//	public WebElement language;
+	
+	@FindBy(how=How.XPATH, using="(//*[@id=\"com.safety.share:safety-share:jar:5.0.0-SNAPSHOT\"])[1]")
+	public WebElement compound;
+	
+	@FindBy(how=How.XPATH, using="(//*[@id=\"com.safety.share:safety-share:jar:5.0.0-SNAPSHOT\"])[2]")
+	public WebElement therapeuticArea;
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"uniqName_12_0_label\"]/../../..")
+	public WebElement continuetoupload;
+	
+	@FindBy(how=How.XPATH, using="(//input[(@type=\"text\")])[13]")
+	public WebElement compoundType;
+	
+	@FindBy(how=How.XPATH, using="(//span[@title='Close'])[1]")
+	public WebElement compclose;
+	
+	@FindBy(how=How.XPATH, using="(//span[@title='Close'])[2]")
+	public WebElement therapclose;
+	
+	@FindBy(how=How.XPATH, using="(//*[@placeholder=\"Select Study ID(s)\"])[1]")
+	public WebElement studyId;
+	
+	@FindBy(how=How.XPATH, using="(//*[@placeholder=\"Select Study Site ID(s)\"])[1]")
+	public WebElement siteId;
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"DIL_DATE_CONTROL\"]")
+	public WebElement dilDate;
+	
+	
+	@FindBy(how=How.XPATH, using="//*[@name='snd:pSRAssessment']")
+	public WebElement pSRAssessment;
+	
+	@FindBy(how=How.XPATH, using="(//textarea[@name='snd:description'])[5]")
+	public WebElement description;
+	
+	@FindBy(how=How.XPATH, using="(//input[@class='alfresco-html-FileInput'])[5]")
+	public WebElement fileUpload;
+	
+	
+	@FindBy(how=How.XPATH, using="(//span[@title='Close'])[3]")
+	public WebElement studyclose;
+	
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"UPLOAD_COMPLETED_DIALOG\"]/div[2]/div[2]/span/span")
+	public WebElement successpopUpclose;
+	
+	@FindBy(how=How.XPATH, using="//span[normalize-space(text())='UPLOAD']//../..")
+	public WebElement uploadbtn;
+	
+	@FindBy(how=How.XPATH, using="//span[normalize-space(text())='Select Safety Notification Source']")
+	public WebElement SNsource;
+	
+	
+	@FindBy(how=How.XPATH, using="//span[normalize-space(text())='Select Study of Occurrence']")
+	public WebElement StudyofOccur;
+	
+	
+	@FindBy(how=How.XPATH, using="//span[normalize-space(text())='Select SUSAR Sub-Type']")
+	public WebElement SusarSubType;
+	
+	@FindBy(how=How.XPATH, using="//*[@id='SUSAR_REPORT_DATE_CONTROL']")
+	public WebElement SusarDate;
+	
+	@FindBy(how=How.XPATH, using="//input[@name='snd:studyOfOccurrence']")
+	public WebElement StudyofOccur1;
+	
+	@FindBy(how=How.XPATH, using="//input[@placeholder='Enter Manufacturer Report Number']")
+	public WebElement mrn;
+	
+	@FindBy(how=How.XPATH, using="(//textarea[@name='snd:description'])[1]")
+	public WebElement descriptionsusar;
+	
+	@FindBy(how=How.XPATH, using="//*[@name='snd:eventNames']")
+	public WebElement pSRAssessmentsusar;
+	
+	@FindBy(how=How.XPATH, using="(//input[@name='uploadDocument'])[1]")
+	public WebElement uploadSusar;
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"SUSAR_SPONSOR_RECEIVED_DATE_CONTROL\"]")
+	public WebElement susarSponsorDate;
+	
+	@FindBy(how=How.XPATH, using="(//*[starts-with(@id,\"alfresco_forms_controls_Select___\")]/tbody/tr/td[1])[7]")
+	public WebElement unantipicatedprob;
+	
+	@FindBy(how=How.XPATH, using="(//*[starts-with(@id,\"alfresco_forms_controls_Select___\")]/tbody/tr/td[1])[8]")
+	public WebElement casualityspn;
+	
+	@FindBy(how=How.XPATH, using="(//*[starts-with(@id,\"alfresco_forms_controls_Select___\")]/tbody/tr/td[1])[9]")
+	public WebElement casualityinvestigtr;
+	
+	@FindBy(how=How.XPATH, using="//*[@id=\"COUNTRY_OF_OCCURENCE_CONTROL\"]")
+	public WebElement countryofOccrnc;
+	
+	@FindBy(how=How.XPATH, using="//span[normalize-space(text())='Select Reporting Timeline']")
+	public WebElement selectReportingTime;
+	
+	@FindBy(how=How.XPATH, using="((//span[normalize-space(text())='OK'])[2]//../..)[2]")
+	public WebElement OKonSuccessfulupload;
+	
+	@FindBy(how=How.XPATH, using="//span[normalize-space(text())='DISTRIBUTE UPLOADED SAFETY NOTIFICATION']")
+	public WebElement distributeDoc;
+	
+	
+	public void UploadDILSafetyNotification() throws Exception 
+	{ 
+		
+		driver.switchTo().frame( driver.findElement( By.xpath("//*[@id=\"unifiedViewContainer\"]") ) );
+		   				
+		properties= obj.getProperty();
+
+		Map<String, String> TestDataInMap = ExcelHandler.getTestDataInMap(properties.getProperty("testDataFilePath"),properties.getProperty("sheetName"),properties.getProperty("TestCaseId"));
+		testData.setTestDatainMap(TestDataInMap);
+				
+		Map<String,String> testDataInMap = testData.getTestDatainMap();
+		String SN = testDataInMap.get("SN_TypeDIL");
+		String language1 = testDataInMap.get("LanguageDIL");
+		String compound1= testDataInMap.get("CompoundDIL");
+		String therap = testDataInMap.get("TherapeuticAreaDIL");
+		String compoundtype = testDataInMap.get("CompoundTypeDIL");
+		
+		String study = testDataInMap.get("StudyId_DIL");
+		String site = testDataInMap.get("StudySiteID_DIL");
+		String dateinput = testDataInMap.get("DILDate");
+		String pSRA = testDataInMap.get("PatientSafetyRiskAssessment_DIL");
+		String descrip = testDataInMap.get("Description_DIL");
+		String filepath = testDataInMap.get("PathDoc_DIL");
+		
+		safetyNotification.click();
+		Thread.sleep(3000);
+		
+		WebElement selectSN=driver.findElement(By.xpath("//td[contains(text(),'"+SN+"')]"));
+		selectSN.click();
+		Thread.sleep(3000);
+		
+//		Select languagedd = new Select (language);
+//		languagedd.selectByVisibleText(language1);
+//		Thread.sleep(3000);
+		
+		compound.click();
+		compound.sendKeys(compound1);
+		compound.click();
+		Thread.sleep(4000);
+		compound.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		compclose.click();
+		Thread.sleep(2000);
+		
+		
+		therapeuticArea.click();
+		Thread.sleep(2000);
+		therapeuticArea.sendKeys(therap);
+		Thread.sleep(4000);
+		therapeuticArea.click();
+		therapeuticArea.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		therapclose.click();
+		Thread.sleep(2000);
+		
+		System.out.println("closed");
+		
+//		Select compType1 = new Select (compoundType);
+//		compType1.selectByVisibleText(compoundtype);
+//		Thread.sleep(3000);
+		compoundType.click();
+		Thread.sleep(2000);
+		
+		WebElement selectcompType=driver.findElement(By.xpath("//td[contains(text(),'"+compoundtype+"')]"));
+		selectcompType.click();
+		Thread.sleep(3000);
+			
+		continuetoupload.click();
+		Thread.sleep(5000);
+				
+		studyId.click();
+		studyId.sendKeys(study);
+		studyId.click();
+		Thread.sleep(4000);
+		studyId.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		studyclose.click();
+		Thread.sleep(2000);
+		
+		
+		siteId.click();
+		siteId.sendKeys(site);
+		siteId.click();
+		Thread.sleep(4000);
+		siteId.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		siteId.click();
+		Thread.sleep(2000);
+		
+		
+		dilDate.sendKeys(dateinput);
+		Thread.sleep(2000);
+		
+		
+		pSRAssessment.sendKeys(pSRA);
+		Thread.sleep(2000);
+		description.sendKeys(descrip);
+		Thread.sleep(2000);
+		
+		
+		fileUpload.sendKeys(filepath);
+		Thread.sleep(5000);
+		
+		uploadbtn.click();
+		Thread.sleep(5000);
+		
+		driver.switchTo().defaultContent();		
+		
+	}
+	
+	
+	
+	
+	public void UploadSUSARSafetyNotification() throws Exception 
+	{ 
+		
+		driver.switchTo().frame( driver.findElement( By.xpath("//*[@id=\"unifiedViewContainer\"]") ) );
+		   				
+		properties= obj.getProperty();
+
+		Map<String, String> TestDataInMap = ExcelHandler.getTestDataInMap(properties.getProperty("testDataFilePath"),properties.getProperty("sheetName"),properties.getProperty("TestCaseId"));
+		testData.setTestDatainMap(TestDataInMap);
+				
+		Map<String,String> testDataInMap = testData.getTestDatainMap();
+		String SN = testDataInMap.get("SN_TypeSUSAR");
+		String language1 = testDataInMap.get("LanguageSUSAR");
+		String source = testDataInMap.get("SN_SourceSUSAR");
+		String compound1= testDataInMap.get("CompoundSUSAR");
+		String therap = testDataInMap.get("TherapeuticAreaSUSAR");
+		String compoundtype = testDataInMap.get("CompoundTypeSUSAR");
+					
+		String subtype = testDataInMap.get("SubType_SUSAR");
+		String study = testDataInMap.get("Study_SUSAR");
+		String country = testDataInMap.get("country_SUSAR");
+		String dateinput = testDataInMap.get("DateSUSAR");
+		String MRN = testDataInMap.get("MRN");
+		String pSRA = testDataInMap.get("PatientSafetyRiskAssessment_Other");
+		String descrip = testDataInMap.get("Description_Other");
+		String filepath = testDataInMap.get("PathDoc_Other");
+		String sponsorReceveddt = testDataInMap.get("sponsorRecevedDate");
+		
+		String reportingTime = testDataInMap.get("ReportingTimeline");
+		String unanticipatedProblem = testDataInMap.get("unanticipatedProb");
+		String casualitysp = testDataInMap.get("CasualitySponsor");
+		String casualityinvestigatr = testDataInMap.get("Casualityinvestigator");
+		
+		
+		safetyNotification.click();
+		Thread.sleep(3000);
+		
+		WebElement selectSN=driver.findElement(By.xpath("//td[contains(text(),'"+SN+"')]"));
+		selectSN.click();
+		Thread.sleep(3000);
+	
+		SNsource.click();
+		Thread.sleep(3000);
+		WebElement sourceselect=driver.findElement(By.xpath("//td[contains(text(),'"+source+"')]"));
+		sourceselect.click();
+		Thread.sleep(3000);
+				
+		compound.click();
+		compound.sendKeys(compound1);
+		compound.click();
+		Thread.sleep(4000);
+		compound.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		compclose.click();
+		Thread.sleep(2000);
+		
+		
+		therapeuticArea.click();
+		Thread.sleep(2000);
+		therapeuticArea.sendKeys(therap);
+		Thread.sleep(4000);
+		therapeuticArea.click();
+		therapeuticArea.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		therapclose.click();
+		Thread.sleep(2000);
+		
+		System.out.println("closed");
+		
+		compoundType.click();
+		Thread.sleep(2000);
+		
+		WebElement selectcompType=driver.findElement(By.xpath("//td[contains(text(),'"+compoundtype+"')]"));
+		selectcompType.click();
+		Thread.sleep(3000);
+			
+		continuetoupload.click();
+		Thread.sleep(5000);
+				
+		SusarSubType.click();
+		Thread.sleep(2000);
+		
+		WebElement subTypeSusar=driver.findElement(By.xpath("//td[contains(text(),'"+subtype+"')]"));
+		subTypeSusar.click();
+		Thread.sleep(3000);
+		
+		
+		selectReportingTime.click();
+		Thread.sleep(2000);
+		
+		WebElement reportingTime1=driver.findElement(By.xpath("//td[contains(text(),'"+reportingTime+"')]"));
+		reportingTime1.click();
+		Thread.sleep(2000);
+		
+		
+		countryofOccrnc.sendKeys(country);
+		Thread.sleep(2000);
+		countryofOccrnc.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		countryofOccrnc.sendKeys(Keys.TAB);
+		
+		
+		StudyofOccur.click();
+		Thread.sleep(2000);
+		
+		
+		 WebElement hiddenWebElement =driver.findElement(By.xpath("//td[normalize-space(text())='"+study+"']"));
+         ((JavascriptExecutor)driver).executeScript("arguments[0].click()",hiddenWebElement);
+         Thread.sleep(2000);
+
+		
+		mrn.sendKeys(MRN);
+		Thread.sleep(2000);
+		
+		SusarDate.sendKeys(dateinput);
+		Thread.sleep(2000);
+		
+		
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollTo(0, - document.body.scrollHeight)");
+//        Thread.sleep(2000);
+		
+		
+		susarSponsorDate.sendKeys(sponsorReceveddt);
+		Thread.sleep(2000);
+		
+		unantipicatedprob.click();
+		Thread.sleep(2000);
+		
+		WebElement unantipicatedprob1 =driver.findElement(By.xpath("//td[contains(text(),'"+unanticipatedProblem+"')]"));
+		unantipicatedprob1.click();
+		Thread.sleep(3000);
+		
+		
+		casualityspn.click();
+		Thread.sleep(2000);
+				
+		WebElement casualityspn1 =driver.findElement(By.xpath("//td[contains(text(),'"+casualitysp+"')]"));
+		casualityspn1.click();
+		
+		
+		casualityinvestigtr.click();
+		Thread.sleep(4000);
+		
+		System.out.println(casualityinvestigatr);
+		WebElement casualityinvestigatr1 =driver.findElement(By.xpath("(//td[contains(text(),'"+casualityinvestigatr+"')])[2]"));
+		casualityinvestigatr1.click();
+		Thread.sleep(2000);
+		
+		
+		pSRAssessmentsusar.sendKeys(pSRA);
+		Thread.sleep(2000);
+		descriptionsusar.sendKeys(descrip);
+		Thread.sleep(2000);
+		
+		
+		uploadSusar.sendKeys(filepath);
+		Thread.sleep(5000);
+		
+		uploadbtn.click();
+		Thread.sleep(25000);
+	
+		
+		driver.switchTo().defaultContent();		
+		
+	}
+	
+	
+	
+	
+	public void UploadOtherSafetyNotification() throws Exception 
+	{ 
+		
+		driver.switchTo().frame( driver.findElement( By.xpath("//*[@id=\"unifiedViewContainer\"]") ) );
+		   				
+		properties= obj.getProperty();
+
+		Map<String, String> TestDataInMap = ExcelHandler.getTestDataInMap(properties.getProperty("testDataFilePath"),properties.getProperty("sheetName"),properties.getProperty("TestCaseId"));
+		testData.setTestDatainMap(TestDataInMap);
+				
+		Map<String,String> testDataInMap = testData.getTestDatainMap();
+		//String SN = testDataInMap.get("SN_TypeOther");
+		
+		
+		String language1 = testDataInMap.get("LanguageOther");
+		String compound1= testDataInMap.get("CompoundOther");
+		String therap = testDataInMap.get("TherapeuticAreaOther");
+		String compoundtype = testDataInMap.get("CompoundTypeOther");
+		
+		String study = testDataInMap.get("StudyId_Other");
+		String site = testDataInMap.get("StudySiteID_Other");
+		String dateinput = testDataInMap.get("DateOther");
+		String pSRA = testDataInMap.get("PatientSafetyRiskAssessment_Other");
+		String descrip = testDataInMap.get("Description_Other");
+		String filepath = testDataInMap.get("PathDoc_Other");
+		
+		safetyNotification.click();
+		Thread.sleep(3000);
+		
+//		WebElement selectSN=driver.findElement(By.xpath("//td[contains(text(),'"+SN+"')]"));
+//		selectSN.click();
+//		Thread.sleep(3000);
+		type.sendKeys();
+		
+		compound.click();
+		Thread.sleep(2000);
+		compound.sendKeys(compound1);
+		Thread.sleep(2000);
+		compound.click();
+		Thread.sleep(4000);
+		compound.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		compclose.click();
+		Thread.sleep(2000);
+		
+		
+		therapeuticArea.click();
+		Thread.sleep(2000);
+		therapeuticArea.sendKeys(therap);
+		Thread.sleep(4000);
+		therapeuticArea.click();
+		therapeuticArea.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		therapclose.click();
+		Thread.sleep(2000);
+		
+		System.out.println("closed");
+		
+		compoundType.click();
+		Thread.sleep(2000);
+		
+		WebElement selectcompType=driver.findElement(By.xpath("//td[contains(text(),'"+compoundtype+"')]"));
+		selectcompType.click();
+		Thread.sleep(3000);
+			
+		continuetoupload.click();
+		Thread.sleep(5000);
+				
+		studyId.click();
+		studyId.sendKeys(study);
+		studyId.click();
+		Thread.sleep(4000);
+		studyId.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		studyclose.click();
+		Thread.sleep(2000);
+		
+		
+		siteId.click();
+		siteId.sendKeys(site);
+		siteId.click();
+		Thread.sleep(4000);
+		siteId.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		siteId.click();
+		Thread.sleep(2000);
+	
+		
+		
+		pSRAssessment.sendKeys(pSRA);
+		Thread.sleep(2000);
+		description.sendKeys(descrip);
+		Thread.sleep(2000);
+		
+		
+		fileUpload.sendKeys(filepath);
+		Thread.sleep(5000);
+		
+//		uploadbtn.click();
+//		Thread.sleep(5000);
+		
+		driver.switchTo().defaultContent();		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/DebaleenaR/Demo-1.git"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="Debaleena Roy &lt;debaleena.roy2@cognizant.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="Debaleena Roy &lt;debaleena.roy2@cognizant.com&gt;"/>
+	</list>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Selenium Projects\GitJavaProject\.git">
+			<item value="empty"/>
+		</list>
+		<list key="C:\Users\588937\git\repository3\.git">
+			<item value="empty"/>
+		</list>
+		<list key="C:\Selenium Projects\FP_UP_General_Study\SeleniumCucumberBDDFramework\.git">
+			<item value="empty"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item value="200,200" key="STAGING_SASH_FORM_WEIGHT"/>
+		<item value="false" key="sortItemState"/>
+		<item value="false" key="MAIN_SASH_FORM_ORIENTATION_VERTICAL"/>
+		<item value="200,200" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
+	</section>
+</section>

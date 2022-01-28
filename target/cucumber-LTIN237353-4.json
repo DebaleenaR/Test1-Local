@@ -1,0 +1,406 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 10552900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TestHooks.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "820",
+        "description": "",
+        "id": "820;820",
+        "after": [
+          {
+            "result": {
+              "duration": 60600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "TestHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 28830408500,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 6,
+                "value": "#  Login to SiteUserOne"
+              },
+              {
+                "line": 8,
+                "value": "#   Given Open browser and launch SIPUrl"
+              },
+              {
+                "line": 9,
+                "value": "#   When Application homepage is open"
+              },
+              {
+                "line": 10,
+                "value": "#   Then Enter to the application with \"limbadl_4646@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 11,
+                "value": "#   Then NavigatetoMyfacility"
+              },
+              {
+                "line": 12,
+                "value": "#   Then ClickOnHyperlink as \"Facility+Department\""
+              },
+              {
+                "line": 13,
+                "value": "#   Then Verify Facility/Department Fields"
+              },
+              {
+                "line": 14,
+                "value": "#   Then Update Department Details"
+              },
+              {
+                "line": 15,
+                "value": "#   Then clickonhome"
+              },
+              {
+                "line": 16,
+                "value": "#"
+              },
+              {
+                "line": 17,
+                "value": "#   Then NavigatetoMyfacility"
+              },
+              {
+                "line": 18,
+                "value": "#   Then ClickOnHyperlink as \"Facility+Department\""
+              },
+              {
+                "line": 19,
+                "value": "#   Then Verify Facility/Department Fields"
+              },
+              {
+                "line": 20,
+                "value": "#   Then Logout from SipApplication"
+              },
+              {
+                "line": 22,
+                "value": "#  LoginSiteUser5"
+              },
+              {
+                "line": 23,
+                "value": "#\tGiven Open browser and launch SIPUrl"
+              },
+              {
+                "line": 24,
+                "value": "#\tWhen Application homepage is open"
+              },
+              {
+                "line": 25,
+                "value": "#\tThen Enter to the application with \"pollardc_1356@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 26,
+                "value": "#\tThen NavigatetoMyfacility"
+              },
+              {
+                "line": 27,
+                "value": "#\tThen ClickOn Action with facilities as \"FacilityName\""
+              },
+              {
+                "line": 28,
+                "value": "#\tThen AddDepartmentFromActionOnly"
+              },
+              {
+                "line": 29,
+                "value": "#\tThen Verify AddDepartment Page"
+              },
+              {
+                "line": 30,
+                "value": "#\tThen Click on Contact DPM link of Department as \"Departmentt\""
+              },
+              {
+                "line": 31,
+                "value": "#\tThen Click on SendMessage"
+              },
+              {
+                "line": 32,
+                "value": "#\tThen Write Message"
+              },
+              {
+                "line": 33,
+                "value": "#\tThen Click on SendMessage"
+              },
+              {
+                "line": 34,
+                "value": "#\tThen Verify SendMessage PopUp"
+              },
+              {
+                "line": 35,
+                "value": "#\tThen clickonbell"
+              },
+              {
+                "line": 36,
+                "value": "#\tThen Logout from SipApplication"
+              },
+              {
+                "line": 37,
+                "value": "#"
+              },
+              {
+                "line": 38,
+                "value": "#"
+              },
+              {
+                "line": 39,
+                "value": "#\t#   LoginSiteUser1"
+              },
+              {
+                "line": 40,
+                "value": "#\tGiven Open browser and launch SIPUrl"
+              },
+              {
+                "line": 41,
+                "value": "#\tWhen Application homepage is open"
+              },
+              {
+                "line": 42,
+                "value": "#\tThen Enter to the application with \"limbadl_4646@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 43,
+                "value": "#\tThen clickonbell"
+              },
+              {
+                "line": 44,
+                "value": "#\tThen Logout from SipApplication"
+              },
+              {
+                "line": 45,
+                "value": "#"
+              },
+              {
+                "line": 46,
+                "value": "#"
+              },
+              {
+                "line": 47,
+                "value": "#\t#   LoginSiteUser2"
+              },
+              {
+                "line": 48,
+                "value": "#\tGiven Open browser and launch SIPUrl"
+              },
+              {
+                "line": 49,
+                "value": "#\tWhen Application homepage is open"
+              },
+              {
+                "line": 50,
+                "value": "#\tThen Enter to the application with \"smitha_4214@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 51,
+                "value": "#\tThen clickonbell"
+              },
+              {
+                "line": 52,
+                "value": "#\tThen Logout from SipApplication"
+              },
+              {
+                "line": 53,
+                "value": "#"
+              },
+              {
+                "line": 54,
+                "value": "#\t#   LoginSiteUser3"
+              },
+              {
+                "line": 55,
+                "value": "#"
+              },
+              {
+                "line": 56,
+                "value": "#\tGiven Open browser and launch SIPUrl"
+              },
+              {
+                "line": 57,
+                "value": "#\tWhen Application homepage is open"
+              },
+              {
+                "line": 58,
+                "value": "#\tThen Enter to the application with \"bravor_1962@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 59,
+                "value": "#\tThen clickonbell"
+              },
+              {
+                "line": 60,
+                "value": "#\tThen Logout from SipApplication"
+              },
+              {
+                "line": 61,
+                "value": "#"
+              },
+              {
+                "line": 62,
+                "value": "#"
+              },
+              {
+                "line": 63,
+                "value": "#\t#   LoginSiteUser4"
+              },
+              {
+                "line": 64,
+                "value": "#"
+              },
+              {
+                "line": 65,
+                "value": "#\tGiven Open browser and launch SIPUrl"
+              },
+              {
+                "line": 66,
+                "value": "#\tWhen Application homepage is open"
+              },
+              {
+                "line": 67,
+                "value": "#\tThen Enter to the application with \"tuckera_0783@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 68,
+                "value": "#\tThen clickonbell"
+              },
+              {
+                "line": 69,
+                "value": "#\tThen Logout from SipApplication"
+              },
+              {
+                "line": 72,
+                "value": "#   AgainLoginSiteUser5"
+              }
+            ],
+            "line": 73,
+            "name": "Open browser and launch SIPUrl",
+            "match": {
+              "location": "StepRepository.open_browser_and_launch_SIPUrl()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1231151300,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "Application homepage is open",
+            "match": {
+              "location": "StepRepository.application_homepage_is_open()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 34043121700,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "Enter to the application with \"limbadl_4646@securepass.exostartest.com\" bypass login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "limbadl_4646@securepass.exostartest.com",
+                  "offset": 31
+                }
+              ],
+              "location": "StepRepository.enter_to_the_application_with_bypass_login(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 19634733800,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "NavigatetoMyfacility",
+            "match": {
+              "location": "StepRepository.NavigatetoMyfacility()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17988428500,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "ClickOnHyperlink as \"Facility+Department\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Facility+Department",
+                  "offset": 21
+                }
+              ],
+              "location": "StepRepository.clickonhyperlink_as(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6524126800,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "NevigateToDepartmentContact",
+            "match": {
+              "location": "StepRepository.nevigatetodepartmentcontact()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16521523700,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "Change The Primary DPM as \"anirbantesting+64674747@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "anirbantesting+64674747@gmail.com",
+                  "offset": 27
+                }
+              ],
+              "location": "StepRepository.change_The_Primary_DPM_as(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "820",
+    "description": "",
+    "id": "820",
+    "keyword": "Feature",
+    "uri": "820.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@820"
+      }
+    ]
+  }
+]

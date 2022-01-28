@@ -1,0 +1,286 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "16719",
+        "description": "",
+        "id": "16719;16719",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 39352483200,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 7,
+                "value": "#    Given Open browser and launch SIPUrl"
+              },
+              {
+                "line": 8,
+                "value": "#   Then Application homepage is open"
+              },
+              {
+                "line": 9,
+                "value": "#   Then Enter to the application with \"sanderb_4530@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 10,
+                "value": "#   Then Navigatetoorganizationandverify"
+              },
+              {
+                "line": 11,
+                "value": "#   Then Click On Hyperlink of organization as \"DS_ORG 3\""
+              },
+              {
+                "line": 12,
+                "value": "#   Then Nevigate Facility/Department Affiliations section"
+              },
+              {
+                "line": 13,
+                "value": "#   Then verify Facility"
+              },
+              {
+                "line": 14,
+                "value": "#\tThen NavigatetoMyfacility"
+              },
+              {
+                "line": 15,
+                "value": "#\tThen ClickOn Action with facilities as \"FacilityName\""
+              },
+              {
+                "line": 16,
+                "value": "#\tThen AddDepartmentFromActionOnly"
+              },
+              {
+                "line": 17,
+                "value": "#\t   Then Logout from SipApplication"
+              },
+              {
+                "line": 18,
+                "value": "#"
+              },
+              {
+                "line": 19,
+                "value": "#"
+              },
+              {
+                "line": 20,
+                "value": "#"
+              },
+              {
+                "line": 21,
+                "value": "#\t    Given Open browser and launch SIPUrl"
+              },
+              {
+                "line": 22,
+                "value": "#\t   Then Application homepage is open"
+              },
+              {
+                "line": 23,
+                "value": "#\t   Then Enter to the application with \"smitha_4214@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 24,
+                "value": "#\t   Then NavigateToMyProfileFacilitiesAndVerify"
+              },
+              {
+                "line": 25,
+                "value": "#\t   Then ClickOnHyperlink as \"FacilityName\""
+              },
+              {
+                "line": 26,
+                "value": "#\t   Then NevigateToFacilityContact"
+              },
+              {
+                "line": 27,
+                "value": "#\t   Then ClickOnAddFacilityContact"
+              },
+              {
+                "line": 28,
+                "value": "#\t   Then Add Site User as \"sharmilaselvamani.sip+220@gmail.com\""
+              },
+              {
+                "line": 29,
+                "value": "#\t   Then Select contact type as FPM"
+              },
+              {
+                "line": 30,
+                "value": "#\t   Then SelectSaveUnderFacilityContact"
+              },
+              {
+                "line": 31,
+                "value": "#\t   Then Logout from SipApplication"
+              }
+            ],
+            "line": 33,
+            "name": "Open browser and launch SIPUrl",
+            "match": {
+              "location": "StepRepository.open_browser_and_launch_SIPUrl()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2735730800,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Application homepage is open",
+            "match": {
+              "location": "StepRepository.application_homepage_is_open()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 65644499900,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Enter to the application with \"sanderb_4530@securepass.exostartest.com\" bypass login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "sanderb_4530@securepass.exostartest.com",
+                  "offset": 31
+                }
+              ],
+              "location": "StepRepository.enter_to_the_application_with_bypass_login(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 38192389400,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "Navigatetoorganizationandverify",
+            "match": {
+              "location": "StepRepository.Navigatetoorganization1andverify()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20594598500,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Click On Hyperlink of organization as \"DS_ORG 3\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DS_ORG 3",
+                  "offset": 39
+                }
+              ],
+              "location": "StepRepository.click_On_Hyperlink_of_organization_as(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13762988200,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "Nevigate Facility/Department Affiliations section",
+            "match": {
+              "location": "StepRepository.nevigate_Facility_Department_Affiliations_section()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3574433900,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "verify Facility",
+            "match": {
+              "location": "StepRepository.verify_Facility()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26438026500,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "NavigatetoMyfacility",
+            "match": {
+              "location": "StepRepository.NavigatetoMyfacility()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18881556000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "ClickOn Action with facilities as \"FacilityName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "FacilityName",
+                  "offset": 35
+                }
+              ],
+              "location": "StepRepository.clickon_Action_with_facilities_as(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 21688010600,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "AddDepartmentFromActionOnly",
+            "match": {
+              "location": "StepRepository.adddepartmentfromactiononly()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 25341576900,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 43,
+                "value": "#always need to change index of this Xpth depands upon at which place facility is [3]"
+              }
+            ],
+            "line": 44,
+            "name": "ClickOnCreatNewDepartment",
+            "match": {
+              "location": "StepRepository.clickoncreatnewdepartment()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "16719",
+    "description": "",
+    "id": "16719",
+    "keyword": "Feature",
+    "uri": "16719.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@16719"
+      }
+    ]
+  }
+]

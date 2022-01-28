@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;11016.feature&apos; to &apos;features&apos;&#x0D;&#x0A;- Original project: &apos;SeleniumCucumberBDDFramework&apos;&#x0D;&#x0A;- Destination element: &apos;features&apos;&#x0D;&#x0A;- Original element: &apos;11016.feature&apos;" description="Copy file" element1="features/11016.feature" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1639389961995" target="/SeleniumCucumberBDDFramework/features" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,81 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "21571",
+        "description": "",
+        "id": "21571;21571",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "comments": [
+              {
+                "line": 7,
+                "value": "#   Given Open browser and launch SIPUrl"
+              },
+              {
+                "line": 8,
+                "value": "#   When Application homepage is open"
+              },
+              {
+                "line": 9,
+                "value": "#   Then Enter to the application with \"kasperr_0428@securepass.exostartest.com\" bypass login"
+              },
+              {
+                "line": 10,
+                "value": "#   Then NavigatetoMyfacility"
+              },
+              {
+                "line": 11,
+                "value": "#"
+              },
+              {
+                "line": 12,
+                "value": "#   Then ClickOnHyperlink as \"FacilityName\""
+              }
+            ],
+            "line": 13,
+            "name": "NevigateToAssociatedSiteUserSection",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14,
+            "name": "VerifyAssociatedSiteUserTables",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15,
+            "name": "VerifyTable1",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "21571",
+    "description": "",
+    "id": "21571",
+    "keyword": "Feature",
+    "uri": "21571.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@21571"
+      }
+    ]
+  }
+]

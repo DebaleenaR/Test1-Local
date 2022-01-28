@@ -1,0 +1,341 @@
+package com.testautomatiom.Listeners;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.google.common.io.Files;
+import com.testautomation.Utility.BrowserUtility;
+import com.testautomation.Utility.PropertiesFileReader;
+
+import java.util.Properties;
+import cucumber.api.java.it.Date;
+import java.util.*;
+
+import javax.imageio.ImageIO;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.event.KeyEvent;
+import java.awt.Robot;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.File;
+import javax.imageio.ImageIO;
+
+public class ExtentReportListner {
+              private static final String ScreenshotImageFormat = null;
+              public static ExtentHtmlReporter report = null;
+              public static ExtentReports extent = null;
+              public static ExtentTest test = null;
+              static PropertiesFileReader obj = new PropertiesFileReader();
+              
+              public static ExtentReports setup() {
+
+                             //String reportLocation = "./Reports/Extent_Report.html";
+              
+                             String reportLocation = "./Reports/"+gettestname()+"_"+getcurrentdateandtime()+"Extent_Report.html";
+                             String newdirPath = createDirectory();
+
+                             
+                             String reportLocation1 = createDirectory()+"/"+gettestname()+"_"+getcurrentdateandtime()+"Extent_Report.html";
+                             String reportLocation2 = createDirectory()+"/"+"SummrayReport_"+getcurrentdateandtime()+"Extent_Report.html";
+                             
+                             
+
+                             
+                             
+                             report = new ExtentHtmlReporter (reportLocation2);
+                             report.config().setDocumentTitle("Automation Test Report");
+                             report.config().setReportName("Automation Test Report");
+                             report.config().setTheme(Theme.STANDARD);
+                             System.out.println("Extent Report location initialized...");
+                             report.start();
+                             
+                             extent = new ExtentReports();
+                             extent.attachReporter(report);
+                             extent.setSystemInfo("Application", "SIP");
+                             extent.setSystemInfo("OS:", System.getProperty("os.name"));
+                             extent.setSystemInfo("User Name:", System.getProperty("user.name"));
+                             System.out.println("System info set in Extent Report");
+                             
+                             return extent;
+              
+              }
+              
+              public static void testStepHandle(String teststatus,WebDriver driver,ExtentTest extenttest,Throwable throwable) {
+              switch (teststatus){
+              case "FAIL":
+                             extenttest.fail(MarkupHelper.createLabel("Test Case is Failed.", ExtentColor.RED));
+                             extenttest.error(throwable.fillInStackTrace());
+                             
+                             if (driver!=null) {
+                                           driver.quit();
+                             }
+                             break;
+              
+              case "PASS":
+                             extenttest.pass(MarkupHelper.createLabel("Test Case is Passed.", ExtentColor.GREEN));
+                             break;
+              
+              default:
+                             break;
+                             }
+                             
+              }
+              
+
+              public static String captureSreenShots(WebDriver driver) throws IOException 
+              {
+
+                             
+                             TakesScreenshot screen = (TakesScreenshot) driver;
+                             File src = screen.getScreenshotAs(OutputType.FILE);
+              
+           
+                             
+                             String dest =System.getProperty("user.dir")+createScreenShotDirectory()+"/"+gettestname()+getcurrentdateandtime()+".png";
+             
+                             
+                             System.out.println("dest1"+dest);
+                             
+                       
+                             File target = new File(dest);
+                             
+                            // String newtarget = dest.replace("C:\\Selenium Projects\\FP_UP_General_Study\\SeleniumCucumberBDDFramework", "..");
+                             String newtarget = dest.replace(System.getProperty("user.dir"), "..");
+
+                             
+                  String newtarget10 = newtarget.replace(".../Reports", "...");
+                  String newtarget11 = newtarget10.replace("/", "\\");
+                  String newtarget12 = newtarget11.replace("...", "..");
+                  
+
+                             
+                             Files.copy(src, target);
+                          
+              
+                             return newtarget12;
+                             
+                             
+              }      
+              
+              
+              public void captureScreen() throws AWTException,UnsupportedFlavorException, IOException{
+              	  
+              	  
+                	Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+                	System.out.println("step 346");
+                	BufferedImage screenFullImage = new Robot().createScreenCapture(screenRect);
+                	System.out.println("step 348");
+                	
+
+                	ImageIO.write(screenFullImage, "png", new File("C:\\Users\\588937\\Desktop\\FullScreenshot.png"));
+                	System.out.println("step 359");
+                	
+
+                	  
+                  }
+
+              
+              
+              private static String getcurrentdateandtime() 
+              {
+                             String str = null;
+                             try {
+                                           DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SSS");
+//                                        Date date;
+//                                        date = new Date(); 
+                                           java.util.Date date=new java.util.Date();  
+                                           //Date date = new Date();
+                                           str = dateFormat.format(date);
+                                           str = str.replace(" ", "").replaceAll("/","").replaceAll(":", "");
+                                           } catch (Exception e) {
+                                                          
+                                           }
+                             return str;
+                             
+              }
+              
+              
+              
+              private static String getdate() 
+              {
+                             String strdate = null;
+                             try {
+                                           DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+//                                        Date date;
+//                                        date = new Date(); 
+                                           java.util.Date date=new java.util.Date();  
+                                           //Date date = new Date();
+                                           strdate = dateFormat.format(date);
+                                           strdate = strdate.replace(" ", "").replaceAll("/","");
+                                           } catch (Exception e) {
+                                                          
+                                           }
+                             return strdate;
+                             
+              }
+              
+              
+              private static String gettestname() 
+              {
+                             String testcasename=null;
+                             
+                             
+                             try {
+                                           Properties properties= obj.getProperty();
+                                           String testname = properties.getProperty("TestCaseId");
+                                           testcasename=testname;
+                                           
+                             } catch (Exception e) {
+                                                          
+                                           }
+                             return testcasename;
+                             
+              }
+              
+              
+              private static String createDirectory() 
+              {
+                             String directoryname=null;
+                             
+                             
+                             try {
+                                           
+                                           String dirPath = "./Reports/";
+//                                        dirPath = dirPath + getdate()+"_"+gettestname();
+                                           dirPath = dirPath + getdate()+"_SummaryReport";
+                                           File file = new File(dirPath);
+                                           
+                                           
+                                           boolean exists = file.exists();
+                                           
+                                           
+                                           
+                                           if(exists){
+                                      System.out.println("Directory already exist.");
+                                      System.out.println("createDirectory:"+dirPath);
+                                   }else{
+                                             
+                                             boolean bool = file.mkdir();
+                                      System.out.println("Directory created successfully");
+                                   }
+                                           
+                                           directoryname= dirPath;
+                                           
+                             } catch (Exception e) {
+                                                          
+                                           }
+                             return directoryname;
+                             
+              }
+              
+              
+              
+              private static String createScreenShotDirectory() 
+              {
+                             String screndirectoryname=null;
+                             
+                             
+                             try {
+                                           
+                                           String dirPath = createDirectory()+"/";
+                                           System.out.println(dirPath);
+                                           dirPath = dirPath +"Screenshots";
+                                           File file = new File(dirPath);
+                                           
+                                           boolean exists = file.exists();
+                                           
+                                           
+                                           if(exists){
+                                      System.out.println("ScreenShot Directory exists");
+                                      System.out.println("createScreenShotDirectory:"+dirPath);
+                                   }else{
+                                             boolean bool = file.mkdir();
+                                      System.out.println("ScreenShot Directory created successfully");
+                                   }
+                                           
+                                           
+                                           screndirectoryname= dirPath;
+                                           
+                             } catch (Exception e) {
+                                                          
+                                           }
+                             return screndirectoryname;
+                             
+              }
+              
+              
+              
+//              public class ashot_CompletePage {
+//
+//            	    public void full_Page(String[] args) throws Exception {
+//
+//            	        System.setProperty("god.bless.you", "C:\\Utility\\BrowserDrivers\\chromedriver.exe");
+//            	        ChromeOptions options = new ChromeOptions();
+//            	        options.addArguments("start-maximized");
+//            	        options.addArguments("disable-infobars");
+//            	        options.addArguments("--disable-extensions"); 
+//            	        WebDriver driver =  new ChromeDriver(options);
+//            	        driver.get("https://jquery.com/");
+//            	        new WebDriverWait(driver, 20).until(ExpectedConditions.titleContains("jQuery"));
+//            	        Screenshot myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(driver);
+//            	        ImageIO.write(myScreenshot.getImage(),"PNG",new File("./Screenshots/elementScreenshot.png"));
+//            	        driver.quit();
+//            	    }
+//            	}
+
+              
+              
+                
+              
+//               public static final long serialVersionUID = 1L;
+//               public void main(String[] args)
+//               {
+//               try {
+//               Thread.sleep(120);
+//               Robot r = new Robot();
+//                
+//               // It saves screenshot to desired path
+//               String path = "D:// Shot.jpg";
+//                
+//               // Used to get ScreenSize and capture image
+//               Rectangle capture = 
+//               new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+//               BufferedImage Image = r.createScreenCapture(capture);
+//               ImageIO.write(Image, "png", new File(path));
+//               System.out.println("Screenshot saved");
+//               }
+//               catch (AWTException | IOException | InterruptedException ex) {
+//               System.out.println(ex);
+//               }
+//               }
+              
+              
+}
